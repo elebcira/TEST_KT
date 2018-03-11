@@ -1,7 +1,6 @@
 package com.kata.caltax.service.test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -16,7 +15,6 @@ import com.kata.caltax.service.Impl.CalculServiceImpl;
 
 public class CalculTaxeServiceTest {
 
-	CalculTaxeService calculTaxeService = new CalculServiceImpl();
 	static Facture facture;
 
 	@BeforeClass
@@ -71,9 +69,7 @@ public class CalculTaxeServiceTest {
 
 		// INPUT 1
 		assertEquals(facture.getInputPaniers().get(0).getInput().get(0).getHt().doubleValue(), 12.49, 0);
-
 		assertEquals(facture.getInputPaniers().get(0).getInput().get(0).getHt().doubleValue(), 12.49, 0);
-
 		assertEquals(facture.getInputPaniers().get(0).getInput().get(1).getHt().doubleValue(), 14.99, 0);
 		assertEquals(facture.getInputPaniers().get(0).getInput().get(2).getHt().doubleValue(), 0.85, 0);
 
