@@ -1,5 +1,6 @@
 package com.kata.caltax.service.test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -63,42 +64,44 @@ public class CalculTaxeServiceTest {
 	@Before
 	public void setUp() throws Exception {
 
-
 	}
 
 	@Test
 	public void testInut1() {
 
 		// INPUT 1
-		assertTrue(facture.getInputPaniers().get(0).getInput().get(0).getHt().doubleValue() == 12.49);
-		assertTrue(facture.getInputPaniers().get(0).getInput().get(1).getHt().doubleValue() == 14.99);
-		assertTrue(facture.getInputPaniers().get(0).getInput().get(2).getHt().doubleValue() == 0.85);
+		assertEquals(facture.getInputPaniers().get(0).getInput().get(0).getHt().doubleValue(), 12.49, 0);
 
-		assertTrue(facture.getInputPaniers().get(0).getMontantTaxes().doubleValue() == 5.53);
-		assertTrue(facture.getInputPaniers().get(0).getTotal().doubleValue() == 48.05);
+		assertEquals(facture.getInputPaniers().get(0).getInput().get(0).getHt().doubleValue(), 12.49, 0);
+
+		assertEquals(facture.getInputPaniers().get(0).getInput().get(1).getHt().doubleValue(), 14.99, 0);
+		assertEquals(facture.getInputPaniers().get(0).getInput().get(2).getHt().doubleValue(), 0.85, 0);
+
+		assertEquals(facture.getInputPaniers().get(0).getMontantTaxes().doubleValue(), 5.53, 0);
+		assertEquals(facture.getInputPaniers().get(0).getTotal().doubleValue(), 48.05, 0);
 	}
 
 	@Test
 	public void testInut2() {
 		// INPUT 2
-		assertTrue(facture.getInputPaniers().get(1).getInput().get(0).getHt().doubleValue() == 10);
-		assertTrue(facture.getInputPaniers().get(1).getInput().get(1).getHt().doubleValue() == 47.50);
+		assertEquals(facture.getInputPaniers().get(1).getInput().get(0).getHt().doubleValue(), 10, 0);
+		assertEquals(facture.getInputPaniers().get(1).getInput().get(1).getHt().doubleValue(), 47.50, 0);
 
-		assertTrue(facture.getInputPaniers().get(1).getMontantTaxes().doubleValue() == 36.65);
-		assertTrue(facture.getInputPaniers().get(1).getTotal().doubleValue() == 199.15);
+		assertEquals(facture.getInputPaniers().get(1).getMontantTaxes().doubleValue(), 36.65, 0);
+		assertEquals(facture.getInputPaniers().get(1).getTotal().doubleValue(), 199.15, 0);
 
 	}
 
 	@Test
 	public void testInut3() {
 		// INPUT 3
-		assertTrue(facture.getInputPaniers().get(2).getInput().get(0).getHt().doubleValue() == 27.99);
-		assertTrue(facture.getInputPaniers().get(2).getInput().get(1).getHt().doubleValue() == 18.99);
-		assertTrue(facture.getInputPaniers().get(2).getInput().get(2).getHt().doubleValue() == 9.75);
-		assertTrue(facture.getInputPaniers().get(2).getInput().get(3).getHt().doubleValue() == 11.25);
+		assertEquals(facture.getInputPaniers().get(2).getInput().get(0).getHt().doubleValue(), 27.99, 0);
+		assertEquals(facture.getInputPaniers().get(2).getInput().get(1).getHt().doubleValue(), 18.99, 0);
+		assertEquals(facture.getInputPaniers().get(2).getInput().get(2).getHt().doubleValue(), 9.75, 0);
+		assertEquals(facture.getInputPaniers().get(2).getInput().get(3).getHt().doubleValue(), 11.25, 0);
 
-		assertTrue(facture.getInputPaniers().get(2).getMontantTaxes().doubleValue() == 18.98);
-		assertTrue(facture.getInputPaniers().get(2).getTotal().doubleValue() == 145.7);
+		assertEquals(facture.getInputPaniers().get(2).getMontantTaxes().doubleValue(), 18.98, 0);
+		assertEquals(facture.getInputPaniers().get(2).getTotal().doubleValue(), 145.7, 0);
 	}
 
 }
